@@ -1,0 +1,22 @@
+{
+  "name": "antigravity-cli-windows-notifier",
+  "version": "1.0.0",
+  "description": "Native Windows Toast notifications for Antigravity CLI completion events and interaction prompts.",
+  "main": "install.js",
+  "scripts": {
+    "install": "node install.js"
+  },
+  "keywords": [
+    "antigravity-cli",
+    "agy-cli",
+    "windows",
+    "notifications",
+    "toast",
+    "hooks"
+  ],
+  "author": "Luiz Feltrin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
