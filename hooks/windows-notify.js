@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const THRESHOLD_SECONDS = 5;
+const THRESHOLD_SECONDS = 0;
 const SHOW_ICON = false;
 
 let input = '';
@@ -12,6 +12,10 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('data', chunk => input += chunk);
 process.stdin.on('end', () => {
     try {
+        // Log de depuração
+        const debugLog = path.join(os.tmpdir(), 'antigravity-hook-debug.txt');
+        fs.appendFileSync(debugLog, `[${new Date().toISOString()}] Hook chamado com input: ${input.substring(0, 100)}...\n`);
+
         if (!input.trim()) {
             process.stdout.write(JSON.stringify({ decision: "allow" }));
             return;

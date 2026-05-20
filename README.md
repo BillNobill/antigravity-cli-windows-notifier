@@ -27,10 +27,14 @@ This project implements a professional notification system for the **Antigravity
    agy
    ```
 3. Give the following prompt:
-   > "Install the windows notification hooks for me by running the install.js script and verifying my settings.json."
+   > "Install the windows notification hooks for me."
+   *Or run the command directly:*
+   ```powershell
+   agy plugin install .
+   ```
 
-### Option 2: Manual Installation (Terminal)
-
+### Option 2: Legacy Manual Installation (Node.js)
+If you prefer the legacy method (which modifies `settings.json` directly):
 1. Clone the repository and navigate to the root.
 2. Run the installer:
    ```powershell
@@ -40,6 +44,10 @@ This project implements a professional notification system for the **Antigravity
 ### Uninstallation
 
 To remove the hooks and assets from your system:
+```powershell
+agy plugin uninstall antigravity-windows-notifier
+```
+*Legacy removal:*
 ```powershell
 node uninstall.js
 ```

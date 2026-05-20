@@ -1,0 +1,5 @@
+{
+  "name": "antigravity-windows-notifier",
+  "version": "1.0.0",
+  "description": "Windows Toast notifications for Antigravity CLI"
+}

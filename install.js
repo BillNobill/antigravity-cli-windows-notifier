@@ -129,6 +129,16 @@ async function setup() {
         log('No changes needed in settings.json (hooks already present).');
     }
 
+    // 5. Native Plugin Installation (for Agy v1.0.0+)
+    try {
+        log('Registering as native Agy plugin...');
+        const { execSync } = require('child_process');
+        execSync('agy plugin install .', { stdio: 'inherit', cwd: __dirname });
+        log('Native plugin registration complete.');
+    } catch (e) {
+        log('Note: Native plugin registration skipped or failed (common if agy is not in PATH).');
+    }
+
     log('Installation complete! Enjoy your notifications.');
 }
 

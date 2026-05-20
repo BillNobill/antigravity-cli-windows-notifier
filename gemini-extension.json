@@ -1,0 +1,34 @@
+{
+  "name": "antigravity-windows-notifier",
+  "version": "1.0.0",
+  "description": "Windows Toast notifications for Antigravity CLI",
+  "hooks": {
+    "BeforeAgent": [
+      {
+        "name": "start-timer",
+        "command": "node hooks/mark-start.js",
+        "matcher": ".*"
+      }
+    ],
+    "AfterAgent": [
+      {
+        "name": "windows-notifier",
+        "command": "node hooks/windows-notify.js",
+        "matcher": ".*"
+      }
+    ],
+    "BeforeTool": [
+      {
+        "name": "ask-notifier",
+        "command": "node hooks/windows-ask-notify.js",
+        "matcher": "ask_user"
+      }
+    ],
+    "Notification": [
+      {
+        "name": "permission-notifier",
+        "command": "node hooks/windows-ask-notify.js"
+      }
+    ]
+  }
+}

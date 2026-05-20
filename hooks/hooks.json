@@ -1,0 +1,47 @@
+{
+  "hooks": {
+    "BeforeAgent": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${EXTENSION_ROOT}/hooks/mark-start.js\""
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${EXTENSION_ROOT}/hooks/windows-notify.js\""
+          }
+        ]
+      }
+    ],
+    "BeforeTool": [
+      {
+        "matcher": "ask_user",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${EXTENSION_ROOT}/hooks/windows-ask-notify.js\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${EXTENSION_ROOT}/hooks/windows-ask-notify.js\""
+          }
+        ]
+      }
+    ]
+  }
+}
